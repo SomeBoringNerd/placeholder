@@ -1,0 +1,75 @@
+---
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
+
+---
+
+<Layout title="404 (⇀‸↼‶)">
+	<main>
+        <h1>Welcome to <span class="text-gradient">PLACEHOLDER-SPACE</span></h1>
+		<p class="instructions">
+			You are here because you went on <code>falling-from.space</code> or <br />
+			<code>self-hosted.lol</code>, but those websites dont have their own page yet.
+		</p>
+		<ul role="list" class="link-card-grid">
+			<Card
+				href="https://someboringnerd.xyz/"
+				title="My website"
+				body="The place you probably wanted to go on"
+			/>
+			<Card
+				href="https://github.com/SomeBoringNerd"
+				title="My Github"
+				body="I have a lot of code on this website :D"
+			/>
+		</ul>
+		<p class="instructions">
+			made with the <a href="https://astro.build/">Astro framework </a>and the default template
+		</p>
+	</main>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+	h1 {
+		font-size: 3rem;
+		font-weight: 800;
+		margin: 0;
+	}
+	.text-gradient {
+		background-image: var(--accent-gradient);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		background-size: 400%;
+		background-position: 0%;
+	}
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+	.instructions code, a {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+</style>
